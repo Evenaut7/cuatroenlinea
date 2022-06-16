@@ -26,15 +26,11 @@
 
 >En la primera instancia colocamos el nombre del proyecto
 
-![Name](https://cdn.discordapp.com/attachments/577240428148031516/987003530206412832/unknown.png) 
-
 >Luego nos pedira la ruta del proyecto. En caso de ya estar en el directorio correspondiente lo dejamos en blanco.
-
-![Directory](https://cdn.discordapp.com/attachments/577240428148031516/987004409336725504/unknown.png) 
 
 >Por ultimo el tipo de proyecto, en el cual ingresaremos ``Laravel``
 
-![Type](https://cdn.discordapp.com/attachments/577240428148031516/987005543015137360/unknown.png) 
+![Type](https://cdn.discordapp.com/attachments/577240428148031516/987012957441503292/unknown.png) 
 
 
 ### Iniciar Proyecto
@@ -55,3 +51,11 @@
 >Para poder ingresar al juego sol otendremos que colocar en la URL ``/jugar/1``
 
 ![Juego](https://cdn.discordapp.com/attachments/577240428148031516/987011047695204412/unknown.png)
+
+### Finalizar Proyecto 
+
+>Para ello colocaremos dos comandos, uno para finalizar ddev y otro para finalizar docker
+
+>``ddev stop``
+
+>``wsl --shutdown``
