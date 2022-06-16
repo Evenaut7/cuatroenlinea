@@ -22,22 +22,26 @@
 
 >Para comenzar abriremos el programa Docker, luego en la consola intorudicremos: 
 
->``ddev config``
+    ddev config
 
 >En la primera instancia colocamos el nombre del proyecto
 
+![Name](/images/name.png) 
+
 >Luego nos pedira la ruta del proyecto. En caso de ya estar en el directorio correspondiente lo dejamos en blanco.
+
+![Rute](/images/dir.png) 
 
 >Por ultimo el tipo de proyecto, en el cual ingresaremos ``Laravel``
 
-![Type](https://cdn.discordapp.com/attachments/577240428148031516/987012957441503292/unknown.png) 
+![Type](/images/site.png) 
 
 
 ### Iniciar Proyecto
 
 >Para realizar esto teniendo Docker abierto colocaremos el siguiente comando:
 
->``ddev start``
+    ddev start
 
 >Deberia aparecer algo como esto:
 
@@ -46,16 +50,14 @@
 >Luego ingresmos a la ruta que se indica abajo o simplemente ingresamos: ``https://127.0.0.1:64042``
 >Esto nos redireccionara a la pagina principal donde aparecera esto:
 
-![Page](https://cdn.discordapp.com/attachments/577240428148031516/987010630684905492/unknown.png)
+![Page](/images/inicio.png)
 
 >Para poder ingresar al juego sol otendremos que colocar en la URL ``/jugar/1``
 
-![Juego](https://cdn.discordapp.com/attachments/577240428148031516/987011047695204412/unknown.png)
+![Juego](/images/juego.png)
 
 ### Finalizar Proyecto 
 
 >Para ello colocaremos dos comandos, uno para finalizar ddev y otro para finalizar docker
 
->``ddev stop``
-
->``wsl --shutdown``
+    ddev stop
