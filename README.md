@@ -2,7 +2,7 @@
 
 ## Requisitos
 
-### Tener instalados los siguientes programas (links en las imagenes):
+### Tener instalados los siguientes programas (links en las imágenes):
 
 
 <a href="https://www.docker.com" target="_blank"><img src="https://cdn.worldvectorlogo.com/logos/docker-3.svg" width="300"></a>
@@ -24,40 +24,60 @@
 
     ddev config
 
->En la primera instancia colocamos el nombre del proyecto
+>1- En la primera instancia colocamos el nombre del proyecto
 
-![Name](/Images/name.png) 
+>2- Luego nos pedira la ruta del proyecto. En caso de ya estar en el directorio correspondiente lo dejamos en blanco.
 
->Luego nos pedira la ruta del proyecto. En caso de ya estar en el directorio correspondiente lo dejamos en blanco.
-
-![Rute](/Images/dir.png) 
-
->Por ultimo el tipo de proyecto, en el cual ingresaremos ``Laravel``
-
-![Type](/Images/site.png) 
+>3- Por ultimo el tipo de proyecto, en el cual ingresaremos ``Laravel``
 
 
 ### Iniciar Proyecto
 
->Para realizar esto teniendo Docker abierto colocaremos el siguiente comando:
+>Cada vez que querramos abrir el proyecto deberemos de introducir el siguiente comando teniendo Docker abierto:
 
     ddev start
+ 
+>Luego ingresamos a la URL que se indica abajo en la consola o simplemente ingresamos: ``https://127.0.0.1:64042``
 
->Deberia aparecer algo como esto:
+>La primera vez que hagamos esto la pagina principal nos mostrará esto:
 
-![Init](/Images/start.png) 
+![Error](/Images/Error.png)
 
->Luego ingresmos a la ruta que se indica abajo o simplemente ingresamos: ``https://127.0.0.1:64042``
->Esto nos redireccionara a la pagina principal donde aparecera esto:
+>Esto sucede debido a que falta instalar composer y configurar algunas cosas.
+Para ello introduciremos los siguientes comandos:
+
+>1- Ingresar a la interfaz ssh
+
+    ddev ssh
+    
+>2- Instalar composer
+
+    composer install
+
+>3- Cambiar el nombre de la ruta
+
+    cp .env.example .env
+
+>4- Generar la key
+
+    php artisan key:generate
+
+>5- Salir de ssh
+
+    exit
+
+### Jugar
+
+>Si hicimos bien lo anterior, cada que ingresemos ``ddev start`` nos aparecerá esto en la pagina principal:
 
 ![Page](/Images/Inicio.jpg)
 
->Para poder ingresar al juego sol otendremos que colocar en la URL ``/jugar/1``
+>Para poder ingresar al juego solo tendremos que colocar en la URL ``/jugar/1``
 
 ![Juego](/Images/juego.jpg)
 
-### Finalizar Proyecto 
+### Cerrar ddev
 
->Para ello colocaremos dos comandos, uno para finalizar ddev y otro para finalizar docker
+>Para ello colocamos el siguiete comando
 
     ddev stop
