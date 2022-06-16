@@ -50,11 +50,11 @@
 >Luego ingresmos a la ruta que se indica abajo o simplemente ingresamos: ``https://127.0.0.1:64042``
 >Esto nos redireccionara a la pagina principal donde aparecera esto:
 
-![Page](/Images/Inicio.png)
+![Page](/Images/Inicio.jpg)
 
 >Para poder ingresar al juego sol otendremos que colocar en la URL ``/jugar/1``
 
-![Juego](/Images/juego.png)
+![Juego](/Images/juego.jpg)
 
 ### Finalizar Proyecto 
 
