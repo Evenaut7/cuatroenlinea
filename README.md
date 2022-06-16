@@ -26,15 +26,15 @@
 
 >En la primera instancia colocamos el nombre del proyecto
 
-![Name](/images/name.png) 
+![Name](/Images/name.png) 
 
 >Luego nos pedira la ruta del proyecto. En caso de ya estar en el directorio correspondiente lo dejamos en blanco.
 
-![Rute](/images/dir.png) 
+![Rute](/Images/dir.png) 
 
 >Por ultimo el tipo de proyecto, en el cual ingresaremos ``Laravel``
 
-![Type](/images/site.png) 
+![Type](/Images/site.png) 
 
 
 ### Iniciar Proyecto
@@ -45,16 +45,16 @@
 
 >Deberia aparecer algo como esto:
 
-![Init](https://cdn.discordapp.com/attachments/577240428148031516/987010481506103346/unknown.png) 
+![Init](/Images/start.png) 
 
 >Luego ingresmos a la ruta que se indica abajo o simplemente ingresamos: ``https://127.0.0.1:64042``
 >Esto nos redireccionara a la pagina principal donde aparecera esto:
 
-![Page](/images/inicio.png)
+![Page](/Images/Inicio.png)
 
 >Para poder ingresar al juego sol otendremos que colocar en la URL ``/jugar/1``
 
-![Juego](/images/juego.png)
+![Juego](/Images/juego.png)
 
 ### Finalizar Proyecto 
 
