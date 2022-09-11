@@ -2,16 +2,16 @@
 
 namespace App;
 
-class ficha {
+class Ficha {
 
-    protected $color;
+    private $color;
 
-    protected function __construct($elegircolor) {
+    public function __construct($elegircolor) {
         $this->color = $elegircolor;
     }
 
-    public function mostrarcolor() {
-        print $this->color;
+    public function mostrar_ficha() {
+        return $this->color;
     }
 
 }

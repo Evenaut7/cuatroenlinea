@@ -2,57 +2,46 @@
 
 namespace App;
 
-class tablero {
+class Tablero {
 
-    private $cantidad = 0;
-    private $fichas;
-    private $color1 = "Azul";
-    private $color2 = "Rojo";
-    private $comprobante = 0;
+    public $fichas;
+    private $color1 = "🔶";
+    private $color2 = "🔷";
 
-    public function cambiar_color1($color) {
-        if($this->comprobante == 0){
-            $this->color1 = $color;
-        }
-        else{
-            print("No se puede cambiar el color durante una partida");
-        }
-    }
-
-    public function cambiar_color2($color) {
-        if($this->comprobante == 0){
-            $this->color2 = $color;
-        }
-        else{
-            print("No se puede cambiar el color durante una partida");
+    public function iniciar_tablero(){
+        $this->fichas = [];
+        $this->fichas_totales = 0;
+        for($i = 1; $i<=6; $i++){
+            for($x = 1; $x<=7; $x++){
+                $this->fichas[$i][$x] = new Ficha("⬛");
+            }
         }
     }
 
     public function mostrar_tablero() {
-        return $this->fichas;
+        for($i = 6; $i>=1; $i--){
+            for($x = 1; $x<=7; $x++){
+                print($this->fichas[$i][$x]->mostrar_ficha());
+            }
+            print("\n");
+        }
     }
 
     public function colocar_ficha(int $posicion) {
         
-        $this->comprobante = 1;
-        
-        if ((strlen($this->fichas) % 2) == 0){
-        $ficha = new ficha($this->color1);
+        if ($this->fichas_totales % 2 == 0){
+            $ficha = new Ficha($this->color1);
         }
         else{
-        $ficha = new ficha($this->color2);
+            $ficha = new Ficha($this->color2);
         }
-        
-        $this->fichas[$this->cantidad] = ($ficha, $posicion);
-        $this->cantidad ++;
-    }
 
-    public function reiniciar() {
-        $this->cantidad = 0;
-        $this->fichas = [];
-        $this->comprobante = 0;
-    }
+        $this->fichas_totales ++;
+        $this->columna[$posicion] ++;
+        $cantidad = $this->columna[$posicion];
 
+        $this->fichas[$cantidad][$posicion] = $ficha;
+    }
 
 }
 
