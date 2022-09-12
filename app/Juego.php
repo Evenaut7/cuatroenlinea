@@ -10,13 +10,14 @@ class Juego {
         $this->tablero = $tablerin;
     }
 
-    public function jugar(){
-
+    public function reiniciar_tablero(){
         $this->tablero->iniciar_tablero();
-        $contador = 0;
+    }
+
+    public function jugar(){
     
         while(($this->horizontal() || $this->vertical() || $this->diagonal()) != True){
-            if($contador % 2 == 0){
+            if($this->tablero->fichas_totales % 2 == 0){
                 print("Turno Jugador 1: ");
                 $coordenada = readline();
                 $this->tablero->colocar_ficha($coordenada);
@@ -28,7 +29,17 @@ class Juego {
                 $this->tablero->colocar_ficha($coordenada);
                 $this->tablero->mostrar_tablero();
             }
-            $contador ++;
+        }
+        if(($this->horizontal() || $this->vertical() || $this->diagonal())){
+            if($this->tablero->fichas_totales % 2 == 0){
+                return "Gana Jugador 2";
+            }
+            else{
+                return "Gana Jugador 1";
+            }
+        }
+        else{
+            return "Empate";
         }
     }
 
@@ -48,7 +59,6 @@ class Juego {
                     $cant_aux = 1;
                 }
                 if($cant_aux == 4){
-                    print("Has ganado");
                     return True;
                 }
             }
@@ -71,7 +81,6 @@ class Juego {
                     $cant_aux = 1;
                 }
                 if($cant_aux == 4){
-                    print("Has ganado");
                     return True;
                 }
             }
@@ -85,19 +94,16 @@ class Juego {
                 $fichas = $this->tablero->fichas;
                 if($i<=3 && $x<=4){
                     if($fichas[$i][$x]->mostrar_ficha() == $fichas[$i+1][$x+1]->mostrar_ficha() && $fichas[$i][$x]->mostrar_ficha() == $fichas[$i+2][$x+2]->mostrar_ficha() && $fichas[$i][$x]->mostrar_ficha() == $fichas[$i+3][$x+3]->mostrar_ficha() && $fichas[$i][$x]->mostrar_ficha() != "⬛"){
-                        print("Has ganado");
                         return True;
                     }
                 }
-                if($i<=3 && $x>4){
-                    if($fichas[$i][$x]->mostrar_ficha() == $fichas[$i+1][$x-1]->mostrar_ficha() && $fichas[$i][$x]->mostrar_ficha() == $fichas[$i+2][$x-2]->mostrar_ficha() && $fichas[$i][$x]->mostrar_ficha() == $fichas[$i+3][$x-3]->mostrar_ficha() && $fichas[$i][$x]->mostrar_ficha() != "⬛"){
-                        print("Has ganado");
+                if($i>=4 && $x<=4){
+                    if($fichas[$i][$x]->mostrar_ficha() == $fichas[$i-1][$x+1]->mostrar_ficha() && $fichas[$i][$x]->mostrar_ficha() == $fichas[$i-2][$x+2]->mostrar_ficha() && $fichas[$i][$x]->mostrar_ficha() == $fichas[$i-3][$x+3]->mostrar_ficha() && $fichas[$i][$x]->mostrar_ficha() != "⬛"){
                         return True;
                     }
                 } 
             }
         }
-    return False;
     }
 }
 

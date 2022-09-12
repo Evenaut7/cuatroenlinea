@@ -8,24 +8,16 @@ use Tests\TestCase;
 
 class HoverColorTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
+    public function test_sky_hover(){
 
-    public function test_sky_hover()
-    {
-        $codigo = file_get_contents('https://cuatroenlinea.ddev.site/jugar/123456717');
-                    
+        $codigo = file_get_contents('https://cuatroenlinea.ddev.site/jugar/123456717');        
         $this->assertTrue(substr_count($codigo,'hover:bg-sky-500') == 7);
 
     }
 
-    public function test_red_hover()
-    {
-        $codigo = file_get_contents('https://cuatroenlinea.ddev.site/jugar/1234567176');
-                    
+    public function test_red_hover(){
+
+        $codigo = file_get_contents('https://cuatroenlinea.ddev.site/jugar/1234567176');      
         $this->assertTrue(substr_count($codigo,'hover:bg-red-500') == 7);
 
     }

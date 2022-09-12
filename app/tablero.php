@@ -7,6 +7,8 @@ class Tablero {
     public $fichas;
     private $color1 = "🔶";
     private $color2 = "🔷";
+    public $fichas_totales = 0;
+    private $columna = array(0,0,0,0,0,0,0,0);
 
     public function iniciar_tablero(){
         $this->fichas = [];
