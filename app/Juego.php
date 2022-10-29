@@ -45,7 +45,7 @@ class Juego {
 
     private function horizontal(){
     
-        $aux = "";
+        $aux = " ";
         $cant_aux = 0;
         
         for($i = 6; $i>=1; $i--){
@@ -67,7 +67,7 @@ class Juego {
 
     private function vertical(){
     
-        $aux = "";
+        $aux = " ";
         $cant_aux = 0;
     
         for($x = 1; $x<=7; $x++){
@@ -106,10 +106,5 @@ class Juego {
         }
     }
 }
-
-$tablero = new Tablero();
-
-$juego = new Juego($tablero);
-$juego -> jugar();
 
 ?>
